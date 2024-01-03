@@ -1,0 +1,4 @@
+/* ScrollableQuoteRow.module.css */
+.scrollbarNone::-webkit-scrollbar {
+  display: none;
+}

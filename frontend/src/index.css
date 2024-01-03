@@ -1,0 +1,50 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+@layer components {
+  .tabs-boxed .tab-active {
+    @apply bg-slate-800 bg-opacity-50 text-slate-200 !important;
+  }
+}
+
+::-webkit-scrollbar {
+  @apply w-1 bg-transparent;
+}
+
+/* ::-webkit-scrollbar-thumb {
+  @apply bg-light-grey  dark:bg-dark-grey rounded-xl;
+} */
+
+/* ScrollableQuoteRow.module.css */
+.scrollbarNone::-webkit-scrollbar {
+  display: none;
+}
+
+/* styles/darkMode.css */
+/* .dark {
+  @apply dark:bg-light-grey dark:text-white;
+} */
+/* 
+body[data-theme="dark"] {
+  --bg-side-bar: #fff;
+  --text-side-bar: black; */
+/* --nav-bg-clr: #1f1b24; */
+/* } */
+
+/* body[data-theme="light"] {
+  --bg-side-bar: black;
+  --text-side-bar: white;
+  /* --nav-bg-clr: #1f1b24; */
+/* } */
+
+/* .sidebar {
+  background: var(--bg-side-bar);
+  color: var(--text-side-bar);
+} */
