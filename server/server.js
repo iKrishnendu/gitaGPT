@@ -5,7 +5,8 @@ const cors = require("cors");
 const { json } = require("express");
 
 const app = express();
-app.use(cors());
+// app.use(cors());
+app.use(cors({ origin: "*" }));
 app.use(express.json());
 
 const PORT = process.env.PORT || 5000;
@@ -162,7 +163,7 @@ app.post("/api", async (req, res) => {
 
 app.post("/reset", (req, res) => {
   // Clear the messages array
-  message = [];
+  // message = [];
   res.send("Conversation history reset");
 });
 
