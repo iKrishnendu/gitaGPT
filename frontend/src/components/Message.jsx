@@ -1,9 +1,11 @@
 import PropTypes from "prop-types";
-// import { MdPerson } from "react-icons/md";
 import moment from "moment";
 import Markdown from "./Markdown";
 import Krishna from "../assets/krishna.png";
 import Avatar from "../assets/boy.png";
+import { useState } from "react";
+import { FaRegClipboard } from "react-icons/fa";
+import { GrCheckmark } from "react-icons/gr";
 
 /**
  * A chat message component that displays a message with a timestamp and an icon.
@@ -12,6 +14,13 @@ import Avatar from "../assets/boy.png";
  */
 const Message = (props) => {
   const { id, createdAt, text, ai = false, selected } = props.message;
+  const [isCopied, setIsCopied] = useState(false);
+
+  const handleCopyClick = () => {
+    navigator.clipboard.writeText(text);
+    setIsCopied(true);
+    setTimeout(() => setIsCopied(false), 2000); // Reset the copied state after 2 seconds
+  };
 
   return (
     <div
@@ -30,9 +39,24 @@ const Message = (props) => {
           {ai && (
             <>
               <br />
-              <small>
+              <small className="flex">
                 Note: The answer may not be factually correct. Please do your
                 own research before taking any action.
+                {isCopied && (
+                  <span className="text-black-500 ml-1 items-center flex gap-1">
+                    <GrCheckmark />
+                    Copied!
+                  </span>
+                )}
+                {!isCopied && (
+                  <span
+                    className="text-black-500 cursor-pointer ml-1 flex items-center gap-1"
+                    onClick={handleCopyClick}
+                  >
+                    <FaRegClipboard />
+                    Copy
+                  </span>
+                )}
               </small>
             </>
           )}
@@ -41,20 +65,16 @@ const Message = (props) => {
           </div>
         </div>
       </div>
-      {/* )} */}
 
       <div className="avatar">
         <div className="w-8 border rounded-full border-slate-400">
           {ai ? (
-            // <MdComputer className="w-6 h-full m-auto" />
-            // <Krishna className="w-6 h-full m-auto" />
             <img
               src={Krishna}
               className="w-6 h-full m-auto"
               alt="Krishna avatar"
             />
           ) : (
-            // <MdPerson className="w-6 h-full m-auto" />
             <img src={Avatar} className="w-6 h-full m-auto" alt="User avatar" />
           )}
         </div>

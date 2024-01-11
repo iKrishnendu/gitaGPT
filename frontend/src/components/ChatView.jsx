@@ -56,9 +56,12 @@ const ChatView = () => {
   const callChatAPI = async (formValue) => {
     try {
       console.log("api called", formValue);
-      const response = await axios.post("http://localhost:5000/api", {
-        formValue,
-      });
+      const response = await axios.post(
+        `${process.env.REACT_APP_SERVER_URL}/api`,
+        {
+          formValue,
+        }
+      );
       return response.data;
     } catch (error) {
       console.error("Error sending data:", error);

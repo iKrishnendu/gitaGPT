@@ -84,7 +84,7 @@ const SideBar = () => {
       <ul className="w-full menu rounded-box">
         <li>
           <span
-            className={`border border-black flex items-center gap-2 bg-red-300 hover:bg-red-400 duration-500 p-1 py-2 ${
+            className={`border border-black flex items-center gap-2 bg-red-300 hover:bg-red-400 duration-500 p-1 py-2 cursor-pointer ${
               !open && "justify-center "
             }`}
             onClick={clear}
@@ -96,13 +96,13 @@ const SideBar = () => {
       </ul>
 
       <ul className="absolute bottom-0 w-full rounded-box ">
-        <li className="mb-2 hover:bg-green-300 rounded-md p-2 duration-300">
+        <li className="mb-2 hover:bg-green-300 rounded-md p-2 duration-300 cursor-pointer">
           <ToggleTheme open={open} />
         </li>
 
         <li
           onClick={toggleSound}
-          className="py-2 p-2 hover:bg-green-300 rounded-md duration-300"
+          className="py-2 p-2 hover:bg-green-300 rounded-md duration-300 cursor-pointer"
         >
           <ToggleSound open={open} soundOn={soundOn} />
         </li>
@@ -110,7 +110,7 @@ const SideBar = () => {
         <li>
           <Link
             to="/About"
-            className={`flex items-center py-2 gap-2 hover:bg-green-300 rounded-md p-2 duration-500 ${
+            className={`flex items-center py-2 gap-2 hover:bg-green-300 rounded-md p-2 duration-500 cursor-pointer ${
               !open && "justify-center"
             }`}
           >
