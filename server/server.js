@@ -10,6 +10,10 @@ app.use(cors({ origin: "https://gita-gpt-one.vercel.app" }));
 app.use(express.json());
 app.options("/api", cors());
 
+app.get("/", (req, res) => {
+  res.send("Gita GPT Server is running!");
+});
+
 const PORT = process.env.PORT || 5000;
 let received_data = "";
 const apiKey = process.env.OPENAI_API_KEY;
