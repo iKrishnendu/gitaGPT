@@ -57,8 +57,8 @@ const ChatView = () => {
     try {
       console.log("api called", formValue);
       const response = await axios.post(
-        // `${process.env.REACT_APP_SERVER_URL}/api`,
-        "https://gita-gpt-server.vercel.app/api",
+        `${process.env.REACT_APP_SERVER_URL}/api`,
+        // "https://gita-gpt-server.vercel.app/api",
         {
           formValue,
         }
