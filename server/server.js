@@ -8,6 +8,7 @@ const app = express();
 // app.use(cors());
 app.use(cors({ origin: "https://gita-gpt-one.vercel.app" }));
 app.use(express.json());
+app.options("/api", cors());
 
 const PORT = process.env.PORT || 5000;
 let received_data = "";
