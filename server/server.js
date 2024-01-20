@@ -6,7 +6,7 @@ const { json } = require("express");
 
 const app = express();
 // app.use(cors());
-app.use(cors({ origin: "https://gita-gpt-one.vercel.app" }));
+app.use(cors({ origin: "*" }));
 app.use(express.json());
 app.options("/api", cors());
 

@@ -5,7 +5,7 @@ import SideBar from "../components/SideBar";
 
 const Chat = () => {
   return (
-    <div className="flex transition duration-500 ease-in-out">
+    <div className="flex transition duration-500 ease-in-out dark:text-white">
       <SideBar />
       <ChatView />
     </div>

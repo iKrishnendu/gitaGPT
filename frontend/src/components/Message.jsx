@@ -32,7 +32,11 @@ const Message = (props) => {
       <div
         className={` 
        overflow-hidden rounded-md p-2 
-        ${ai ? "chat-start bg-orange-200 md:mr-24" : "chat-end bg-orange-300"}`}
+        ${
+          ai
+            ? "chat-start bg-orange-200 md:mr-24 dark:bg-gray-600"
+            : "chat-end bg-orange-300 dark:bg-gray-700"
+        }`}
       >
         <div className="chat-bubble">
           <Markdown markdownText={text} />

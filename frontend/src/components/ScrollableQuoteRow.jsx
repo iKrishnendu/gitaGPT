@@ -20,7 +20,7 @@ const ScrollableQuoteRow = ({ setFormValue }) => {
       {sentences.map((sentence, index) => (
         <p
           key={index}
-          className="whitespace-nowrap pr-4 rounded-full bg-purple-200 p-2 cursor-pointer"
+          className="whitespace-nowrap pr-4 rounded-full bg-purple-200 p-2 cursor-pointer dark:bg-gray-600 dark:hover:bg-gray-700"
           onClick={() => handleParagraphClick(sentence)}
         >
           {sentence}

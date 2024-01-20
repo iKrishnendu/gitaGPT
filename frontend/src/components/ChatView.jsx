@@ -113,7 +113,7 @@ const ChatView = () => {
   }, []);
 
   return (
-    <main className="relative flex flex-col h-screen p-1 overflow-hidden ">
+    <main className="relative flex flex-col h-screen p-1 overflow-hidden dark:bg-black dark:text-white">
       <div className="flex items-center justify-center h-1/5">
         <h1 className="text-4xl font-bold">GitaGPT</h1>
       </div>
@@ -131,7 +131,7 @@ const ChatView = () => {
                   <li
                     onClick={() => setFormValue(item.prompt)}
                     key={index}
-                    className="p-6 border rounded-lg border-slate-300 bg-orange-50 hover:border-slate-500"
+                    className="p-6 border rounded-lg border-slate-300 bg-orange-50 hover:border-slate-500 dark:bg-gray-600 dark:hover:bg-gray-700 cursor-pointer"
                   >
                     <p className="text-base font-semibold">{item.title}</p>
                     <p className="text-sm">{item.prompt}</p>
@@ -158,7 +158,7 @@ const ChatView = () => {
             </span>
             <textarea
               ref={inputRef}
-              className="w-full grow input-bordered join-item rounded-md border border-slate-300 bg-orange-50 hover:border-slate-500 "
+              className="w-full grow input-bordered px-2 pt-1 join-item rounded-md border border-slate-300 bg-orange-50 hover:border-slate-500 dark:bg-gray-700"
               value={formValue}
               onKeyDown={handleKeyDown}
               onChange={(e) => setFormValue(e.target.value)}

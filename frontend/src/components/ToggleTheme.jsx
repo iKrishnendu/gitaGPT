@@ -1,21 +1,14 @@
+// ToggleTheme.js
+import React from "react";
 import PropTypes from "prop-types";
-import useDarkMode from "../hooks/useDarkMode";
 import { MdOutlineNightlight, MdOutlineWbSunny } from "react-icons/md";
+import { useTheme } from "../Context/ThemeContext"; // Adjust the path
 
-/**
- * A toggle for switching between light and dark modes.
- *
- * @param {Object} props - The properties for the component.
- * @param {boolean} props.open - Whether the sidebar is open or not.
- */
 const ToggleTheme = (props) => {
-  const [theme, setTheme] = useDarkMode();
+  const { theme, toggleTheme } = useTheme();
 
-  /**
-   * Toggles the dark mode.
-   */
   const handleToggle = () => {
-    setTheme(!theme);
+    toggleTheme();
   };
 
   return (
@@ -23,7 +16,7 @@ const ToggleTheme = (props) => {
       onClick={handleToggle}
       className={`flex items-center gap-2  ${!props.open && "justify-center"}`}
     >
-      {theme ? (
+      {theme === "light" ? (
         <>
           <MdOutlineWbSunny size={25} />
           <p className={`${!props.open && "hidden"}`}>Light mode</p>
@@ -38,8 +31,8 @@ const ToggleTheme = (props) => {
   );
 };
 
-export default ToggleTheme;
-
 ToggleTheme.propTypes = {
   open: PropTypes.bool,
 };
+
+export default ToggleTheme;
